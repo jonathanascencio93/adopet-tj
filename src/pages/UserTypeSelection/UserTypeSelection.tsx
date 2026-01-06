@@ -21,7 +21,7 @@ export function UserTypeSelection() {
 
                 <div className="selection-cards">
                     {/* Adopter Card */}
-                    <Card className="type-card" variant="elevated">
+                    <Card className="type-card adopter-card" variant="elevated">
                         <CardBody>
                             <div className="card-icon">🏠</div>
                             <h2>{t('userType.adopter.title')}</h2>
@@ -58,7 +58,7 @@ export function UserTypeSelection() {
                     </Card>
 
                     {/* Rescuer Card */}
-                    <Card className="type-card" variant="elevated">
+                    <Card className="type-card rescuer-card" variant="elevated">
                         <CardBody>
                             <div className="card-icon">🐾</div>
                             <h2>{t('userType.rescuer.title')}</h2>
