@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdoPet TJ - Blue-Teal Combination</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            padding: 2rem;
+            background: #fafafa;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #171717;
+        }
+
+        .subtitle {
+            color: #737373;
+            margin-bottom: 3rem;
+        }
+
+        .palette-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .color-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .color-card {
+            text-align: center;
+        }
+
+        .color-swatch {
+            height: 100px;
+            border-radius: 0.75rem;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+        }
+
+        .color-name {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #262626;
+            margin-bottom: 0.25rem;
+        }
+
+        .color-value {
+            font-size: 0.75rem;
+            color: #737373;
+            font-family: monospace;
+        }
+
+        .demo-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            padding: 0.875rem 1.75rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .btn-cyan {
+            background: #06b6d4;
+            color: white;
+        }
+
+        .btn-cyan:hover {
+            background: #0891b2;
+            transform: translateY(-1px);
+        }
+
+        .btn-sky {
+            background: #0ea5e9;
+            color: white;
+        }
+
+        .btn-sky:hover {
+            background: #0284c7;
+            transform: translateY(-1px);
+        }
+
+        .btn-blue {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .btn-blue:hover {
+            background: #2563eb;
+            transform: translateY(-1px);
+        }
+
+        .card-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        .card-image {
+            height: 180px;
+            background: linear-gradient(135deg, #dbeafe 0%, #ccfbf1 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #171717;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-text {
+            color: #525252;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .section-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #171717;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🌊 Blue-Teal Combination</h1>
+    <p class="subtitle">A harmonious blend of trust (blue) and freshness (teal)</p>
+
+    <div class="palette-section">
+        <h2 class="section-title">Your Custom Palette</h2>
+        <p style="color: #737373; margin-bottom: 1.5rem;">
+            Combining the lighter blues and teals for a fresh, trustworthy vibe
+        </p>
+
+        <div class="color-row">
+            <!-- From Blue (Option 1) - First 3 -->
+            <div class="color-card">
+                <div class="color-swatch" style="background: #dbeafe;"></div>
+                <div class="color-name">Sky 100</div>
+                <div class="color-value">#dbeafe</div>
+                <div style="font-size: 0.7rem; color: #737373; margin-top: 0.25rem;">From Blue</div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #bfdbfe;"></div>
+                <div class="color-name">Sky 200</div>
+                <div class="color-value">#bfdbfe</div>
+                <div style="font-size: 0.7rem; color: #737373; margin-top: 0.25rem;">From Blue</div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #93c5fd;"></div>
+                <div class="color-name">Sky 300</div>
+                <div class="color-value">#93c5fd</div>
+                <div style="font-size: 0.7rem; color: #737373; margin-top: 0.25rem;">From Blue</div>
+            </div>
+
+            <!-- From Teal (Option 3) - First 2 -->
+            <div class="color-card">
+                <div class="color-swatch" style="background: #ccfbf1;"></div>
+                <div class="color-name">Teal 100</div>
+                <div class="color-value">#ccfbf1</div>
+                <div style="font-size: 0.7rem; color: #737373; margin-top: 0.25rem;">From Teal</div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #5eead4;"></div>
+                <div class="color-name">Teal 300</div>
+                <div class="color-value">#5eead4</div>
+                <div style="font-size: 0.7rem; color: #737373; margin-top: 0.25rem;">From Teal</div>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #404040;">Full Spectrum Options</h3>
+        <p style="color: #737373; margin-bottom: 1.5rem; font-size: 0.9rem;">
+            Three complete palettes using cyan/aqua tones (blue + teal blend)
+        </p>
+
+        <!-- Cyan Option -->
+        <h4 style="margin-top: 1.5rem; color: #404040; font-size: 1rem;">Option A: Cyan (Balanced)</h4>
+        <div class="color-row">
+            <div class="color-card">
+                <div class="color-swatch" style="background: #cffafe;"></div>
+                <div class="color-name">Cyan 100</div>
+                <div class="color-value">#cffafe</div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #a5f3fc;"></div>
+                <div class="color-name">Cyan 200</div>
+                <div class="color-value">#a5f3fc</div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #22d3ee;"></div>
+                <div class="color-name">Cyan 400</div>
+                <div class="color-value">#22d3ee</div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #06b6d4;"></div>
+                <div class="color-name">Cyan 500 ⭐</div>
+                <div class="color-value">#06b6d4</div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #0891b2;"></div>
+                <div class="color-name">Cyan 600</div>
+                <div class="color-value">#0891b2</div>
+            </div>
+        </div>
+
+        <!-- Sky Option -->
+        <h4 style="margin-top: 1.5rem; color: #404040; font-size: 1rem;">Option B: Sky Blue (More Blue)</h4>
+        <div class="color-row">
+            <div class="color-card">
+                <div class="color-swatch" style="background: #dbeafe;"></div>
+                <div class="color-name">Sky 100</div>
+                <div class="color-value">#dbeafe</div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #bae6fd;"></div>
+                <div class="color-name">Sky 200</div>
+                <div class="color-value">#bae6fd</div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #38bdf8;"></div>
+                <div class="color-name">Sky 400</div>
+                <div class="color-value">#38bdf8</div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #0ea5e9;"></div>
+                <div class="color-name">Sky 500 ⭐</div>
+                <div class="color-value">#0ea5e9</div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #0284c7;"></div>
+                <div class="color-name">Sky 600</div>
+                <div class="color-value">#0284c7</div>
+            </div>
+        </div>
+
+        <!-- Standard Blue for comparison -->
+        <h4 style="margin-top: 1.5rem; color: #404040; font-size: 1rem;">Option C: Blue (Original)</h4>
+        <div class="color-row">
+            <div class="color-card">
+                <div class="color-swatch" style="background: #dbeafe;"></div>
+                <div class="color-name">Blue 100</div>
+                <div class="color-value">#dbeafe</div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #93c5fd;"></div>
+                <div class="color-name">Blue 300</div>
+                <div class="color-value">#93c5fd</div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #60a5fa;"></div>
+                <div class="color-name">Blue 400</div>
+                <div class="color-value">#60a5fa</div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #3b82f6;"></div>
+                <div class="color-name">Blue 500 ⭐</div>
+                <div class="color-value">#3b82f6</div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #2563eb;"></div>
+                <div class="color-name">Blue 600</div>
+                <div class="color-value">#2563eb</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2 class="section-title">Button Comparison</h2>
+        <div class="button-grid">
+            <div>
+                <p style="font-weight: 600; margin-bottom: 0.5rem; color: #404040;">Option A: Cyan</p>
+                <button class="btn btn-cyan">🐾 Adopt Now</button>
+            </div>
+            <div>
+                <p style="font-weight: 600; margin-bottom: 0.5rem; color: #404040;">Option B: Sky Blue</p>
+                <button class="btn btn-sky">🐾 Adopt Now</button>
+            </div>
+            <div>
+                <p style="font-weight: 600; margin-bottom: 0.5rem; color: #404040;">Option C: Blue</p>
+                <button class="btn btn-blue">🐾 Adopt Now</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2 class="section-title">Pet Card Examples</h2>
+        <div class="card-demo">
+            <div class="card">
+                <div class="card-image">🐕</div>
+                <div class="card-body">
+                    <div class="card-title">Max - Golden Retriever</div>
+                    <div class="card-text">3 years old • Male • Friendly</div>
+                    <button class="btn btn-cyan" style="width: 100%;">Adopt Max</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">🐈</div>
+                <div class="card-body">
+                    <div class="card-title">Luna - Siamese Cat</div>
+                    <div class="card-text">2 years old • Female • Indoor cat</div>
+                    <button class="btn btn-sky" style="width: 100%;">Adopt Luna</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">🐕</div>
+                <div class="card-body">
+                    <div class="card-title">Charlie - Beagle Mix</div>
+                    <div class="card-text">5 years old • Male • House trained</div>
+                    <button class="btn btn-blue" style="width: 100%;">Adopt Charlie</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);">
+        <h2 style="margin-bottom: 1rem;">🎨 Color Psychology</h2>
+
+        <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+            <div>
+                <h3 style="color: #06b6d4; font-size: 1rem; margin-bottom: 0.5rem;">⭐ Cyan (Recommended)</h3>
+                <ul style="margin-left: 1.25rem; color: #525252; font-size: 0.9rem; line-height: 1.7;">
+                    <li>Fresh & modern</li>
+                    <li>Trust + innovation</li>
+                    <li>Calming yet vibrant</li>
+                    <li>Best balance of blue/teal</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 style="color: #0ea5e9; font-size: 1rem; margin-bottom: 0.5rem;">Sky Blue</h3>
+                <ul style="margin-left: 1.25rem; color: #525252; font-size: 0.9rem; line-height: 1.7;">
+                    <li>More traditional blue</li>
+                    <li>Trustworthy</li>
+                    <li>Slightly lighter feel</li>
+                    <li>Closer to industry standard</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 style="color: #3b82f6; font-size: 1rem; margin-bottom: 0.5rem;">Standard Blue</h3>
+                <ul style="margin-left: 1.25rem; color: #525252; font-size: 0.9rem; line-height: 1.7;">
+                    <li>Classic and safe</li>
+                    <li>Maximum trust</li>
+                    <li>Professional</li>
+                    <li>Most accessible</li>
+                </ul>
+            </div>
+        </div>
+
+        <p
+            style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e5e5; color: #737373; font-style: italic;">
+            My pick: <strong style="color: #06b6d4;">Option A (Cyan)</strong> - gives you the fresh, modern vibe of teal
+            with the trust and reliability of blue. Best of both worlds! 🌊
+        </p>
+    </div>
+</body>
+
+</html>

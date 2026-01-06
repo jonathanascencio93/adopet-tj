@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdoPet TJ - Color Palette Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            padding: 2rem;
+            background: #fafafa;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #171717;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #404040;
+        }
+
+        .subtitle {
+            color: #737373;
+            margin-bottom: 3rem;
+        }
+
+        .palette-section {
+            margin-bottom: 3rem;
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .color-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            background: white;
+        }
+
+        .color-swatch {
+            height: 100px;
+            width: 100%;
+        }
+
+        .color-info {
+            padding: 0.75rem;
+        }
+
+        .color-name {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #262626;
+            margin-bottom: 0.25rem;
+        }
+
+        .color-value {
+            font-size: 0.75rem;
+            color: #737373;
+            font-family: monospace;
+        }
+
+        .demo-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            margin-top: 2rem;
+        }
+
+        .button-demo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: #dc2626;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #b91c1c;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: #ea580c;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #c2410c;
+        }
+
+        .btn-success {
+            background: #16a34a;
+            color: white;
+        }
+
+        .card-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        .card-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #171717;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-text {
+            color: #525252;
+            line-height: 1.5;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .badge-available {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .badge-pending {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .badge-adopted {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+    </style>
+</head>
+<body>
+    <h1>🐾 AdoPet TJ Color Palette</h1>
+    <p class="subtitle">Preview the proposed design system colors</p>
+
+    <div class="palette-section">
+        <h2>Primary Colors (Warm Red)</h2>
+        <p style="color: #737373; margin-bottom: 1rem;">Main brand color - use for CTAs, links, and primary actions</p>
+        <div class="color-grid">
+            <div class="color-card">
+                <div class="color-swatch" style="background: #fef2f2;"></div>
+                <div class="color-info">
+                    <div class="color-name">Primary 50</div>
+                    <div class="color-value">#fef2f2</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #fee2e2;"></div>
+                <div class="color-info">
+                    <div class="color-name">Primary 100</div>
+                    <div class="color-value">#fee2e2</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #fecaca;"></div>
+                <div class="color-info">
+                    <div class="color-name">Primary 200</div>
+                    <div class="color-value">#fecaca</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #f87171;"></div>
+                <div class="color-info">
+                    <div class="color-name">Primary 400</div>
+                    <div class="color-value">#f87171</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #ef4444;"></div>
+                <div class="color-info">
+                    <div class="color-name">Primary 500 ⭐</div>
+                    <div class="color-value">#ef4444</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #dc2626;"></div>
+                <div class="color-info">
+                    <div class="color-name">Primary 600 ⭐</div>
+                    <div class="color-value">#dc2626</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #b91c1c;"></div>
+                <div class="color-info">
+                    <div class="color-name">Primary 700</div>
+                    <div class="color-value">#b91c1c</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #991b1b;"></div>
+                <div class="color-info">
+                    <div class="color-name">Primary 800</div>
+                    <div class="color-value">#991b1b</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="palette-section">
+        <h2>Secondary Colors (Warm Orange)</h2>
+        <p style="color: #737373; margin-bottom: 1rem;">Accent color for highlights and secondary CTAs</p>
+        <div class="color-grid">
+            <div class="color-card">
+                <div class="color-swatch" style="background: #fb923c;"></div>
+                <div class="color-info">
+                    <div class="color-name">Secondary 400</div>
+                    <div class="color-value">#fb923c</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #f97316;"></div>
+                <div class="color-info">
+                    <div class="color-name">Secondary 500</div>
+                    <div class="color-value">#f97316</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #ea580c;"></div>
+                <div class="color-info">
+                    <div class="color-name">Secondary 600 ⭐</div>
+                    <div class="color-value">#ea580c</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="palette-section">
+        <h2>Success Green</h2>
+        <p style="color: #737373; margin-bottom: 1rem;">For "Available" status and success messages</p>
+        <div class="color-grid">
+            <div class="color-card">
+                <div class="color-swatch" style="background: #22c55e;"></div>
+                <div class="color-info">
+                    <div class="color-name">Success 500</div>
+                    <div class="color-value">#22c55e</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #16a34a;"></div>
+                <div class="color-info">
+                    <div class="color-name">Success 600</div>
+                    <div class="color-value">#16a34a</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="palette-section">
+        <h2>Neutral Grays</h2>
+        <p style="color: #737373; margin-bottom: 1rem;">For text, backgrounds, and borders</p>
+        <div class="color-grid">
+            <div class="color-card">
+                <div class="color-swatch" style="background: #fafafa; border: 1px solid #e5e5e5;"></div>
+                <div class="color-info">
+                    <div class="color-name">Neutral 50</div>
+                    <div class="color-value">#fafafa</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #f5f5f5;"></div>
+                <div class="color-info">
+                    <div class="color-name">Neutral 100</div>
+                    <div class="color-value">#f5f5f5</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #e5e5e5;"></div>
+                <div class="color-info">
+                    <div class="color-name">Neutral 200</div>
+                    <div class="color-value">#e5e5e5</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #a3a3a3;"></div>
+                <div class="color-info">
+                    <div class="color-name">Neutral 400</div>
+                    <div class="color-value">#a3a3a3</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #737373;"></div>
+                <div class="color-info">
+                    <div class="color-name">Neutral 500</div>
+                    <div class="color-value">#737373</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #404040;"></div>
+                <div class="color-info">
+                    <div class="color-name">Neutral 700</div>
+                    <div class="color-value">#404040</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #262626;"></div>
+                <div class="color-info">
+                    <div class="color-name">Neutral 800</div>
+                    <div class="color-value">#262626</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #171717;"></div>
+                <div class="color-info">
+                    <div class="color-name">Neutral 900</div>
+                    <div class="color-value">#171717</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2 style="margin-top: 0;">Component Preview</h2>
+        
+        <h3 style="margin-top: 1.5rem; color: #404040;">Buttons</h3>
+        <div class="button-demo">
+            <button class="btn btn-primary">Adopt Now</button>
+            <button class="btn btn-secondary">Learn More</button>
+            <button class="btn btn-success">Available</button>
+        </div>
+
+        <h3 style="margin-top: 2rem; color: #404040;">Status Badges</h3>
+        <div>
+            <span class="status-badge badge-available">Available</span>
+            <span class="status-badge badge-pending">Pending</span>
+            <span class="status-badge badge-adopted">Adopted</span>
+        </div>
+
+        <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #404040;">Card Examples</h3>
+        <div class="card-demo">
+            <div class="card">
+                <div class="card-title">Max - Golden Retriever</div>
+                <div class="card-text">3 years old • Male • Friendly with kids</div>
+                <span class="status-badge badge-available">Available</span>
+            </div>
+            <div class="card">
+                <div class="card-title">Luna - Siamese Cat</div>
+                <div class="card-text">2 years old • Female • Indoor cat</div>
+                <span class="status-badge badge-pending">Pending</span>
+            </div>
+            <div class="card">
+                <div class="card-title">Charlie - Mixed Breed</div>
+                <div class="card-text">5 years old • Male • House trained</div>
+                <span class="status-badge badge-adopted">Adopted</span>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 3rem; padding: 2rem; background: white; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);">
+        <h2 style="margin-top: 0;">💭 Your Feedback</h2>
+        <p style="color: #525252; line-height: 1.6;">
+            What do you think of these colors? Here's what to consider:
+        </p>
+        <ul style="margin-top: 1rem; margin-left: 1.5rem; color: #525252; line-height: 1.8;">
+            <li><strong>Warm reds/oranges</strong> - Convey warmth and compassion for pets</li>
+            <li><strong>Green for success</strong> - Clear "available" status for pets</li>
+            <li><strong>Neutral grays</strong> - Professional and easy to read</li>
+            <li><strong>High contrast</strong> - Meets accessibility standards</li>
+        </ul>
+        <p style="color: #737373; margin-top: 1rem; font-style: italic;">
+            Feel free to suggest different colors if you prefer a different vibe!
+        </p>
+    </div>
+</body>
+</html>

@@ -7,17 +7,19 @@ export interface User {
     email: string;
     name: string;
     role: UserRole;
-    profileImage?: string;
+    profileImage: string;
     createdAt: Date;
     adopter?: AdopterProfile;
     rescuer?: RescuerProfile;
 }
 
-export enum UserRole {
-    Adopter = 'adopter',
-    Rescuer = 'rescuer',
-    Admin = 'admin',
-}
+export const UserRole = {
+    Adopter: 'adopter',
+    Rescuer: 'rescuer',
+    Admin: 'admin',
+} as const;
+
+export type UserRole = typeof UserRole[keyof typeof UserRole];
 
 export interface AdopterProfile {
     location: {

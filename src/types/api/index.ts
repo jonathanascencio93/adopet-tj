@@ -2,7 +2,7 @@
  * API request/response type definitions
  */
 
-import { Pet, User } from './models';
+import type { Pet, User } from '../models';
 
 // Generic API response wrapper
 export interface ApiResponse<T> {

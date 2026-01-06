@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdoPet TJ - Primary Color Options</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            padding: 2rem;
+            background: #fafafa;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #171717;
+        }
+
+        .subtitle {
+            color: #737373;
+            margin-bottom: 3rem;
+        }
+
+        .option-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .color-option {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        .option-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #171717;
+        }
+
+        .option-subtitle {
+            color: #737373;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .color-swatches {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .swatch {
+            height: 60px;
+            flex: 1;
+            border-radius: 0.5rem;
+        }
+
+        .button-demo {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.875rem 1.75rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .card-example {
+            background: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .pet-card {
+            background: white;
+            padding: 1.25rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+        }
+
+        .pet-name {
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            color: #171717;
+        }
+
+        .pet-info {
+            color: #525252;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .pros-cons {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .pros-cons h4 {
+            font-size: 0.875rem;
+            color: #171717;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .pros-cons ul {
+            margin-left: 1.25rem;
+            color: #525252;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .recommended {
+            position: relative;
+            border: 2px solid #16a34a;
+        }
+
+        .recommended::before {
+            content: "⭐ RECOMMENDED";
+            position: absolute;
+            top: -12px;
+            left: 1rem;
+            background: #16a34a;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        /* Option 1: Warm Blue */
+        .btn-blue {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .btn-blue:hover {
+            background: #2563eb;
+            transform: translateY(-1px);
+        }
+
+        /* Option 2: Compassionate Purple */
+        .btn-purple {
+            background: #8b5cf6;
+            color: white;
+        }
+
+        .btn-purple:hover {
+            background: #7c3aed;
+            transform: translateY(-1px);
+        }
+
+        /* Option 3: Friendly Teal */
+        .btn-teal {
+            background: #14b8a6;
+            color: white;
+        }
+
+        .btn-teal:hover {
+            background: #0d9488;
+            transform: translateY(-1px);
+        }
+
+        /* Option 4: Warm Orange (current secondary) */
+        .btn-orange {
+            background: #f97316;
+            color: white;
+        }
+
+        .btn-orange:hover {
+            background: #ea580c;
+            transform: translateY(-1px);
+        }
+
+        .compare-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            margin-top: 2rem;
+        }
+
+        .compare-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🎨 Choose Your Primary Color</h1>
+    <p class="subtitle">Pick the color that feels right for your "Adopt Now" button and primary actions</p>
+
+    <div class="option-grid">
+        <!-- Option 1: Blue -->
+        <div class="color-option recommended">
+            <div class="option-title">Option 1: Warm Blue</div>
+            <div class="option-subtitle">Trust • Compassion • Calming</div>
+
+            <div class="color-swatches">
+                <div class="swatch" style="background: #dbeafe;"></div>
+                <div class="swatch" style="background: #93c5fd;"></div>
+                <div class="swatch" style="background: #3b82f6;"></div>
+                <div class="swatch" style="background: #2563eb;"></div>
+                <div class="swatch" style="background: #1e40af;"></div>
+            </div>
+
+            <div class="button-demo">
+                <button class="btn btn-blue">🐾 Adopt Now</button>
+                <button class="btn btn-blue">View Pet Profile</button>
+            </div>
+
+            <div class="card-example">
+                <div class="pet-card">
+                    <div class="pet-name">Max - Golden Retriever</div>
+                    <div class="pet-info">3 years old • Male • House trained</div>
+                    <button class="btn btn-blue">Adopt Max</button>
+                </div>
+            </div>
+
+            <div class="pros-cons">
+                <h4>✅ Why this works:</h4>
+                <ul>
+                    <li>Blue = trust and reliability (used by hospitals, vets)</li>
+                    <li>Calming and professional</li>
+                    <li>Most accessible (color-blind friendly)</li>
+                    <li>Industry standard for pet/animal welfare</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Option 2: Purple -->
+        <div class="color-option">
+            <div class="option-title">Option 2: Purple</div>
+            <div class="option-subtitle">Compassion • Caring • Unique</div>
+
+            <div class="color-swatches">
+                <div class="swatch" style="background: #ede9fe;"></div>
+                <div class="swatch" style="background: #c4b5fd;"></div>
+                <div class="swatch" style="background: #8b5cf6;"></div>
+                <div class="swatch" style="background: #7c3aed;"></div>
+                <div class="swatch" style="background: #6d28d9;"></div>
+            </div>
+
+            <div class="button-demo">
+                <button class="btn btn-purple">🐾 Adopt Now</button>
+                <button class="btn btn-purple">View Pet Profile</button>
+            </div>
+
+            <div class="card-example">
+                <div class="pet-card">
+                    <div class="pet-name">Luna - Siamese Cat</div>
+                    <div class="pet-info">2 years old • Female • Indoor cat</div>
+                    <button class="btn btn-purple">Adopt Luna</button>
+                </div>
+            </div>
+
+            <div class="pros-cons">
+                <h4>✅ Why this works:</h4>
+                <ul>
+                    <li>Purple = compassion and care</li>
+                    <li>Stands out from typical pet sites</li>
+                    <li>Gender-neutral and modern</li>
+                    <li>Associated with kindness</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Option 3: Teal -->
+        <div class="color-option">
+            <div class="option-title">Option 3: Teal</div>
+            <div class="option-subtitle">Friendly • Approachable • Fresh</div>
+
+            <div class="color-swatches">
+                <div class="swatch" style="background: #ccfbf1;"></div>
+                <div class="swatch" style="background: #5eead4;"></div>
+                <div class="swatch" style="background: #14b8a6;"></div>
+                <div class="swatch" style="background: #0d9488;"></div>
+                <div class="swatch" style="background: #0f766e;"></div>
+            </div>
+
+            <div class="button-demo">
+                <button class="btn btn-teal">🐾 Adopt Now</button>
+                <button class="btn btn-teal">View Pet Profile</button>
+            </div>
+
+            <div class="card-example">
+                <div class="pet-card">
+                    <div class="pet-name">Charlie - Mixed Breed</div>
+                    <div class="pet-info">5 years old • Male • Friendly</div>
+                    <button class="btn btn-teal">Adopt Charlie</button>
+                </div>
+            </div>
+
+            <div class="pros-cons">
+                <h4>✅ Why this works:</h4>
+                <ul>
+                    <li>Teal = healing and communication</li>
+                    <li>Modern and fresh feeling</li>
+                    <li>Easy on the eyes</li>
+                    <li>Different from competitors</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Option 4: Orange -->
+        <div class="color-option">
+            <div class="option-title">Option 4: Warm Orange</div>
+            <div class="option-subtitle">Energetic • Playful • Warm</div>
+
+            <div class="color-swatches">
+                <div class="swatch" style="background: #fed7aa;"></div>
+                <div class="swatch" style="background: #fdba74;"></div>
+                <div class="swatch" style="background: #f97316;"></div>
+                <div class="swatch" style="background: #ea580c;"></div>
+                <div class="swatch" style="background: #c2410c;"></div>
+            </div>
+
+            <div class="button-demo">
+                <button class="btn btn-orange">🐾 Adopt Now</button>
+                <button class="btn btn-orange">View Pet Profile</button>
+            </div>
+
+            <div class="card-example">
+                <div class="pet-card">
+                    <div class="pet-name">Buddy - Beagle</div>
+                    <div class="pet-info">4 years old • Male • Energetic</div>
+                    <button class="btn btn-orange">Adopt Buddy</button>
+                </div>
+            </div>
+
+            <div class="pros-cons">
+                <h4>✅ Why this works:</h4>
+                <ul>
+                    <li>Orange = enthusiasm and warmth</li>
+                    <li>Playful and energetic (like pets!)</li>
+                    <li>Attention-grabbing but friendly</li>
+                    <li>Less serious than red</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="compare-section">
+        <h2 style="margin-bottom: 1rem;">Side-by-Side Comparison</h2>
+        <p style="color: #737373; margin-bottom: 1.5rem;">See all options together:</p>
+        <div class="compare-buttons">
+            <button class="btn btn-blue">🐾 Adopt Now (Blue)</button>
+            <button class="btn btn-purple">🐾 Adopt Now (Purple)</button>
+            <button class="btn btn-teal">🐾 Adopt Now (Teal)</button>
+            <button class="btn btn-orange">🐾 Adopt Now (Orange)</button>
+        </div>
+    </div>
+
+    <div
+        style="margin-top: 2rem; padding: 2rem; background: white; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);">
+        <h2 style="margin-bottom: 1rem;">My Recommendation 💡</h2>
+        <p style="color: #525252; line-height: 1.6; margin-bottom: 1rem;">
+            I recommend <strong style="color: #3b82f6;">Warm Blue (Option 1)</strong> because:
+        </p>
+        <ul style="margin-left: 1.5rem; color: #525252; line-height: 1.8;">
+            <li><strong>Industry Standard:</strong> Pet shelters, veterinarians, and animal welfare organizations
+                typically use blue</li>
+            <li><strong>Psychology:</strong> Blue evokes trust, safety, and compassion - perfect for adoption decisions
+            </li>
+            <li><strong>Accessibility:</strong> Works well for color-blind users</li>
+            <li><strong>Versatility:</strong> Works with any pet photo colors</li>
+        </ul>
+        <p style="color: #737373; margin-top: 1.5rem; font-style: italic;">
+            But ultimately, go with what feels right to you! All options work well.
+        </p>
+    </div>
+</body>
+
+</html>
