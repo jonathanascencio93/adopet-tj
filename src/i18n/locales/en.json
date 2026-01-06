@@ -29,26 +29,26 @@
         "logout": "Log Out"
     },
     "userType": {
-        "title": "Welcome to AdoPet TJ 🐾",
-        "subtitle": "Find your perfect companion or help pets find loving homes",
+        "title": "🐾Welcome to AdoPet TJ 🐾",
+        "subtitle": "Every pet deserves a loving home, and every home deserves the joy of a furry friend",
         "adopter": {
-            "title": "I Want to Adopt a Pet",
-            "description": "Find your perfect companion",
+            "title": "I'm Looking for a Companion",
+            "description": "Open your heart and home to a pet in need",
             "features": {
-                "browse": "Browse available pets",
-                "save": "Save favorite pets",
-                "apply": "Submit adoption applications",
-                "connect": "Connect with rescuers"
+                "browse": "Meet pets looking for a home",
+                "save": "Connect with your favorites",
+                "apply": "Start your adoption journey",
+                "connect": "Chat with rescuers and shelters"
             }
         },
         "rescuer": {
-            "title": "I'm a Rescuer/Shelter",
-            "description": "Help pets find loving homes",
+            "title": "I Help Pets Find Families",
+            "description": "Make a difference in a pet's life story",
             "features": {
-                "post": "Post pets for adoption",
-                "manage": "Manage adoption requests",
-                "connect": "Connect with adopters",
-                "track": "Track adoptions"
+                "post": "Share pets waiting for love",
+                "manage": "Guide families through adoption",
+                "connect": "Match pets with loving homes",
+                "track": "Celebrate happy endings"
             }
         }
     },

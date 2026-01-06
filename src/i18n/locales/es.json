@@ -29,26 +29,26 @@
         "logout": "Cerrar Sesión"
     },
     "userType": {
-        "title": "Bienvenido a AdoPet TJ 🐾",
-        "subtitle": "Encuentra tu compañero perfecto o ayuda a las mascotas a encontrar hogares amorosos",
+        "title": "🐾Bienvenido a AdoPet TJ 🐾",
+        "subtitle": "Cada mascota merece un hogar lleno de amor, y cada hogar merece la alegría de un amigo peludo",
         "adopter": {
-            "title": "Quiero Adoptar una Mascota",
-            "description": "Encuentra tu compañero perfecto",
+            "title": "Busco un Compañero",
+            "description": "Abre tu corazón y hogar a una mascota que te necesita",
             "features": {
-                "browse": "Navegar mascotas disponibles",
-                "save": "Guardar mascotas favoritas",
-                "apply": "Enviar solicitudes de adopción",
-                "connect": "Conectar con rescatistas"
+                "browse": "Conoce mascotas buscando un hogar",
+                "save": "Conecta con tus favoritos",
+                "apply": "Comienza tu viaje de adopción",
+                "connect": "Chatea con rescatistas y refugios"
             }
         },
         "rescuer": {
-            "title": "Soy un Rescatista/Refugio",
-            "description": "Ayuda a las mascotas a encontrar hogares amorosos",
+            "title": "Ayudo a Mascotas a Encontrar Familias",
+            "description": "Haz una diferencia en la historia de una mascota",
             "features": {
-                "post": "Publicar mascotas en adopción",
-                "manage": "Gestionar solicitudes de adopción",
-                "connect": "Conectar con adoptantes",
-                "track": "Rastrear adopciones"
+                "post": "Comparte mascotas esperando amor",
+                "manage": "Guía familias en la adopción",
+                "connect": "Une mascotas con hogares amorosos",
+                "track": "Celebra finales felices"
             }
         }
     },
