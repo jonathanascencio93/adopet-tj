@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/common/Button';
 import { Input } from '@/components/common/Input';
 import { Card, CardHeader, CardBody, CardFooter } from '@/components/common/Card';
+import { LanguageToggle } from '@/components/common/LanguageToggle';
 import './App.css';
 
 function App() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -18,24 +21,28 @@ function App() {
   return (
     <div className="app">
       <div className="container">
+        <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 'var(--spacing-4)' }}>
+          <LanguageToggle />
+        </div>
+
         <header className="app-header">
-          <h1>🐾 AdoPet TJ</h1>
-          <p>Find your perfect companion</p>
+          <h1>🐾 {t('app.name')}</h1>
+          <p>{t('app.tagline')}</p>
         </header>
 
         <div className="demo-grid">
           {/* Buttons Demo */}
           <Card>
             <CardHeader>
-              <h2>Buttons</h2>
+              <h2>{t('common.submit')}</h2>
             </CardHeader>
             <CardBody>
               <div className="button-showcase">
-                <Button variant="primary">Adopt Now</Button>
-                <Button variant="secondary">Learn More</Button>
-                <Button variant="outline">View Details</Button>
-                <Button variant="ghost">Cancel</Button>
-                <Button variant="danger">Delete</Button>
+                <Button variant="primary">{t('common.getStarted')}</Button>
+                <Button variant="secondary">{t('common.learnMore')}</Button>
+                <Button variant="outline">{t('common.edit')}</Button>
+                <Button variant="ghost">{t('common.cancel')}</Button>
+                <Button variant="danger">{t('common.delete')}</Button>
               </div>
               <div className="button-showcase">
                 <Button size="sm">Small</Button>
@@ -43,7 +50,7 @@ function App() {
                 <Button size="lg">Large</Button>
               </div>
               <div className="button-showcase">
-                <Button isLoading>Loading...</Button>
+                <Button isLoading>{t('common.loading')}</Button>
                 <Button disabled>Disabled</Button>
               </div>
             </CardBody>
@@ -52,12 +59,12 @@ function App() {
           {/* Form Demo */}
           <Card>
             <CardHeader>
-              <h2>Sign In</h2>
+              <h2>{t('auth.login.title')}</h2>
             </CardHeader>
             <CardBody>
               <form onSubmit={handleSubmit} className="form-demo">
                 <Input
-                  label="Email"
+                  label={t('auth.login.email')}
                   type="email"
                   placeholder="your@email.com"
                   value={email}
@@ -65,7 +72,7 @@ function App() {
                   helperText="We'll never share your email"
                 />
                 <Input
-                  label="Password"
+                  label={t('auth.login.password')}
                   type="password"
                   placeholder="••••••••"
                   value={password}
@@ -76,7 +83,7 @@ function App() {
                   isLoading={isLoading}
                   style={{ width: '100%' }}
                 >
-                  Sign In
+                  {t('auth.login.button')}
                 </Button>
               </form>
             </CardBody>
@@ -88,11 +95,22 @@ function App() {
             <CardBody>
               <h3 style={{ marginBottom: 'var(--spacing-2)' }}>Max</h3>
               <p style={{ color: 'var(--color-text-secondary)', marginBottom: 'var(--spacing-4)' }}>
-                Golden Retriever • 3 years old • Male
+                Golden Retriever • {t('pets.age', { count: 3 })} • {t('pets.male')}
               </p>
               <p style={{ marginBottom: 'var(--spacing-4)' }}>
                 Friendly, house-trained, great with kids. Looking for a loving forever home!
               </p>
+              <div style={{
+                display: 'inline-block',
+                padding: 'var(--spacing-1) var(--spacing-3)',
+                borderRadius: 'var(--radius-full)',
+                backgroundColor: 'var(--color-success-100)',
+                color: 'var(--color-success-700)',
+                fontSize: 'var(--text-sm)',
+                fontWeight: 'var(--font-semibold)'
+              }}>
+                {t('pets.available')}
+              </div>
             </CardBody>
             <CardFooter>
               <div style={{ display: 'flex', gap: 'var(--spacing-3)' }}>
@@ -100,7 +118,7 @@ function App() {
                   Adopt Max
                 </Button>
                 <Button variant="secondary">
-                  Learn More
+                  {t('common.learnMore')}
                 </Button>
               </div>
             </CardFooter>
@@ -111,11 +129,22 @@ function App() {
             <CardBody>
               <h3 style={{ marginBottom: 'var(--spacing-2)' }}>Luna</h3>
               <p style={{ color: 'var(--color-text-secondary)', marginBottom: 'var(--spacing-4)' }}>
-                Siamese Cat • 2 years old • Female
+                Siamese Cat • {t('pets.age', { count: 2 })} • {t('pets.female')}
               </p>
               <p style={{ marginBottom: 'var(--spacing-4)' }}>
                 Calm, affectionate, indoor cat. Perfect for apartment living.
               </p>
+              <div style={{
+                display: 'inline-block',
+                padding: 'var(--spacing-1) var(--spacing-3)',
+                borderRadius: 'var(--radius-full)',
+                backgroundColor: 'var(--color-warning-100)',
+                color: 'var(--color-warning-600)',
+                fontSize: 'var(--text-sm)',
+                fontWeight: 'var(--font-semibold)'
+              }}>
+                {t('pets.pending')}
+              </div>
             </CardBody>
             <CardFooter>
               <div style={{ display: 'flex', gap: 'var(--spacing-3)' }}>
@@ -123,7 +152,7 @@ function App() {
                   Adopt Luna
                 </Button>
                 <Button variant="secondary">
-                  Learn More
+                  {t('common.learnMore')}
                 </Button>
               </div>
             </CardFooter>
@@ -134,11 +163,22 @@ function App() {
             <CardBody>
               <h3 style={{ marginBottom: 'var(--spacing-2)' }}>Charlie</h3>
               <p style={{ color: 'var(--color-text-secondary)', marginBottom: 'var(--spacing-4)' }}>
-                Parakeet • 1 year old • Male
+                Parakeet • {t('pets.age', { count: 1 })} • {t('pets.male')}
               </p>
               <p style={{ marginBottom: 'var(--spacing-4)' }}>
                 Playful, loves to sing, needs a spacious cage and toys.
               </p>
+              <div style={{
+                display: 'inline-block',
+                padding: 'var(--spacing-1) var(--spacing-3)',
+                borderRadius: 'var(--radius-full)',
+                backgroundColor: 'var(--color-success-100)',
+                color: 'var(--color-success-700)',
+                fontSize: 'var(--text-sm)',
+                fontWeight: 'var(--font-semibold)'
+              }}>
+                {t('pets.available')}
+              </div>
             </CardBody>
             <CardFooter>
               <div style={{ display: 'flex', gap: 'var(--spacing-3)' }}>
@@ -146,7 +186,7 @@ function App() {
                   Adopt Charlie
                 </Button>
                 <Button variant="secondary">
-                  Learn More
+                  {t('common.learnMore')}
                 </Button>
               </div>
             </CardFooter>
@@ -159,7 +199,7 @@ function App() {
           color: 'var(--color-text-tertiary)',
           fontSize: 'var(--text-sm)'
         }}>
-          <p>AdoPet TJ Design System • Sky Blue + Amber (Color-Blind Accessible) 🌟</p>
+          <p>{t('app.name')} • Sky Blue + Amber (Color-Blind Accessible) 🌟</p>
         </footer>
       </div>
     </div>

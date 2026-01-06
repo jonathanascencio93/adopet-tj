@@ -1,0 +1,93 @@
+{
+    "app": {
+        "name": "AdoPet TJ",
+        "tagline": "Find your perfect companion"
+    },
+    "common": {
+        "getStarted": "Get Started",
+        "learnMore": "Learn More",
+        "cancel": "Cancel",
+        "save": "Save",
+        "delete": "Delete",
+        "edit": "Edit",
+        "back": "Back",
+        "next": "Next",
+        "submit": "Submit",
+        "search": "Search",
+        "filter": "Filter",
+        "loading": "Loading...",
+        "error": "Error",
+        "success": "Success"
+    },
+    "navigation": {
+        "home": "Home",
+        "pets": "Pets",
+        "about": "About",
+        "contact": "Contact",
+        "login": "Log In",
+        "signup": "Sign Up",
+        "logout": "Log Out"
+    },
+    "userType": {
+        "title": "Welcome to AdoPet TJ",
+        "subtitle": "Find your perfect companion or help pets find loving homes",
+        "adopter": {
+            "title": "I Want to Adopt a Pet",
+            "description": "Find your perfect companion",
+            "features": {
+                "browse": "Browse available pets",
+                "save": "Save favorite pets",
+                "apply": "Submit adoption applications",
+                "connect": "Connect with rescuers"
+            }
+        },
+        "rescuer": {
+            "title": "I'm a Rescuer/Shelter",
+            "description": "Help pets find loving homes",
+            "features": {
+                "post": "Post pets for adoption",
+                "manage": "Manage adoption requests",
+                "connect": "Connect with adopters",
+                "track": "Track adoptions"
+            }
+        }
+    },
+    "auth": {
+        "login": {
+            "title": "Sign In",
+            "email": "Email",
+            "password": "Password",
+            "button": "Sign In",
+            "forgotPassword": "Forgot password?",
+            "noAccount": "Don't have an account?",
+            "signupLink": "Sign up"
+        },
+        "signup": {
+            "title": "Create Account",
+            "name": "Full Name",
+            "email": "Email",
+            "password": "Password",
+            "confirmPassword": "Confirm Password",
+            "button": "Sign Up",
+            "haveAccount": "Already have an account?",
+            "loginLink": "Log in"
+        }
+    },
+    "pets": {
+        "available": "Available",
+        "pending": "Pending",
+        "adopted": "Adopted",
+        "fostered": "Fostered",
+        "age": "{{count}} year old",
+        "age_plural": "{{count}} years old",
+        "male": "Male",
+        "female": "Female",
+        "unknown": "Unknown"
+    },
+    "validation": {
+        "required": "This field is required",
+        "emailInvalid": "Please enter a valid email address",
+        "passwordTooShort": "Password must be at least 8 characters",
+        "passwordsDoNotMatch": "Passwords do not match"
+    }
+}

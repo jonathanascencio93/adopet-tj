@@ -1,0 +1,93 @@
+{
+    "app": {
+        "name": "AdoPet TJ",
+        "tagline": "Encuentra tu compañero perfecto"
+    },
+    "common": {
+        "getStarted": "Comenzar",
+        "learnMore": "Saber Más",
+        "cancel": "Cancelar",
+        "save": "Guardar",
+        "delete": "Eliminar",
+        "edit": "Editar",
+        "back": "Atrás",
+        "next": "Siguiente",
+        "submit": "Enviar",
+        "search": "Buscar",
+        "filter": "Filtrar",
+        "loading": "Cargando...",
+        "error": "Error",
+        "success": "Éxito"
+    },
+    "navigation": {
+        "home": "Inicio",
+        "pets": "Mascotas",
+        "about": "Acerca de",
+        "contact": "Contacto",
+        "login": "Iniciar Sesión",
+        "signup": "Registrarse",
+        "logout": "Cerrar Sesión"
+    },
+    "userType": {
+        "title": "Bienvenido a AdoPet TJ",
+        "subtitle": "Encuentra tu compañero perfecto o ayuda a las mascotas a encontrar hogares amorosos",
+        "adopter": {
+            "title": "Quiero Adoptar una Mascota",
+            "description": "Encuentra tu compañero perfecto",
+            "features": {
+                "browse": "Navegar mascotas disponibles",
+                "save": "Guardar mascotas favoritas",
+                "apply": "Enviar solicitudes de adopción",
+                "connect": "Conectar con rescatistas"
+            }
+        },
+        "rescuer": {
+            "title": "Soy un Rescatista/Refugio",
+            "description": "Ayuda a las mascotas a encontrar hogares amorosos",
+            "features": {
+                "post": "Publicar mascotas en adopción",
+                "manage": "Gestionar solicitudes de adopción",
+                "connect": "Conectar con adoptantes",
+                "track": "Rastrear adopciones"
+            }
+        }
+    },
+    "auth": {
+        "login": {
+            "title": "Iniciar Sesión",
+            "email": "Correo Electrónico",
+            "password": "Contraseña",
+            "button": "Iniciar Sesión",
+            "forgotPassword": "¿Olvidaste tu contraseña?",
+            "noAccount": "¿No tienes una cuenta?",
+            "signupLink": "Regístrate"
+        },
+        "signup": {
+            "title": "Crear Cuenta",
+            "name": "Nombre Completo",
+            "email": "Correo Electrónico",
+            "password": "Contraseña",
+            "confirmPassword": "Confirmar Contraseña",
+            "button": "Registrarse",
+            "haveAccount": "¿Ya tienes una cuenta?",
+            "loginLink": "Iniciar sesión"
+        }
+    },
+    "pets": {
+        "available": "Disponible",
+        "pending": "Pendiente",
+        "adopted": "Adoptado",
+        "fostered": "En Hogar Temporal",
+        "age": "{{count}} año",
+        "age_plural": "{{count}} años",
+        "male": "Macho",
+        "female": "Hembra",
+        "unknown": "Desconocido"
+    },
+    "validation": {
+        "required": "Este campo es obligatorio",
+        "emailInvalid": "Por favor ingresa un correo electrónico válido",
+        "passwordTooShort": "La contraseña debe tener al menos 8 caracteres",
+        "passwordsDoNotMatch": "Las contraseñas no coinciden"
+    }
+}
