@@ -99,7 +99,7 @@ function App() {
                 <Button variant="primary" style={{ flex: 1 }}>
                   Adopt Max
                 </Button>
-                <Button variant="outline">
+                <Button variant="secondary">
                   Learn More
                 </Button>
               </div>
@@ -122,7 +122,7 @@ function App() {
                 <Button variant="primary" style={{ flex: 1 }}>
                   Adopt Luna
                 </Button>
-                <Button variant="outline">
+                <Button variant="secondary">
                   Learn More
                 </Button>
               </div>
@@ -145,7 +145,7 @@ function App() {
                 <Button variant="primary" style={{ flex: 1 }}>
                   Adopt Charlie
                 </Button>
-                <Button variant="outline">
+                <Button variant="secondary">
                   Learn More
                 </Button>
               </div>
@@ -159,7 +159,7 @@ function App() {
           color: 'var(--color-text-tertiary)',
           fontSize: 'var(--text-sm)'
         }}>
-          <p>AdoPet TJ Design System Demo • Built with React + TypeScript</p>
+          <p>AdoPet TJ Design System • Sky Blue + Amber (Color-Blind Accessible) 🌟</p>
         </footer>
       </div>
     </div>
