@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Options - AdoPet TJ</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 2rem;
+            background: #fafafa;
+            font-family: -apple-system, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #171717;
+        }
+
+        .font-option {
+            background: white;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        .font-name {
+            text-align: center;
+            font-size: 0.875rem;
+            color: #737373;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .preview-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #0284c7;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .preview-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #525252;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.75;
+        }
+
+        .font-details {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e5e5e5;
+            text-align: center;
+        }
+
+        .vibe {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #e0f2fe;
+            color: #0369a1;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        /* Font Option 1: Poppins + Inter (Current) */
+        .font-1 .preview-title {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .font-1 .preview-subtitle {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Font Option 2: Plus Jakarta Sans */
+        .font-2 .preview-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .font-2 .preview-subtitle {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 400;
+        }
+
+        /* Font Option 3: Outfit */
+        .font-3 .preview-title {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .font-3 .preview-subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+        }
+
+        /* Font Option 4: DM Sans */
+        .font-4 .preview-title {
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .font-4 .preview-subtitle {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+        }
+
+        /* Font Option 5: Quicksand (Playful) */
+        .font-5 .preview-title {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .font-5 .preview-subtitle {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 500;
+        }
+
+        /* Font Option 6: Nunito (Friendly) */
+        .font-6 .preview-title {
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .font-6 .preview-subtitle {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 400;
+        }
+
+        .recommended {
+            border: 3px solid #16a34a;
+            position: relative;
+        }
+
+        .recommended::before {
+            content: "⭐ RECOMMENDED";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #16a34a;
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .preview-title {
+                font-size: 2rem;
+            }
+
+            .preview-subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🎨 Choose Your Font Pairing</h1>
+
+    <!-- Option 1: Current -->
+    <div class="font-option font-1">
+        <div class="font-name">Current: Poppins + Inter</div>
+        <div class="preview-title">🐾 Welcome to AdoPet TJ</div>
+        <div class="preview-subtitle">Find your perfect companion or help pets find loving homes</div>
+        <div class="font-details">
+            <span class="vibe">Professional</span>
+            <span class="vibe">Modern</span>
+            <span class="vibe">Clean</span>
+        </div>
+    </div>
+
+    <!-- Option 2: Plus Jakarta Sans -->
+    <div class="font-option font-2 recommended">
+        <div class="font-name">Option 2: Plus Jakarta Sans</div>
+        <div class="preview-title">🐾 Welcome to AdoPet TJ</div>
+        <div class="preview-subtitle">Find your perfect companion or help pets find loving homes</div>
+        <div class="font-details">
+            <span class="vibe">Warm</span>
+            <span class="vibe">Modern</span>
+            <span class="vibe">Friendly</span>
+            <span class="vibe">Rounded</span>
+        </div>
+    </div>
+
+    <!-- Option 3: Outfit -->
+    <div class="font-option font-3">
+        <div class="font-name">Option 3: Outfit</div>
+        <div class="preview-title">🐾 Welcome to AdoPet TJ</div>
+        <div class="preview-subtitle">Find your perfect companion or help pets find loving homes</div>
+        <div class="font-details">
+            <span class="vibe">Geometric</span>
+            <span class="vibe">Contemporary</span>
+            <span class="vibe">Clean</span>
+        </div>
+    </div>
+
+    <!-- Option 4: DM Sans -->
+    <div class="font-option font-4">
+        <div class="font-name">Option 4: DM Sans</div>
+        <div class="preview-title">🐾 Welcome to AdoPet TJ</div>
+        <div class="preview-subtitle">Find your perfect companion or help pets find loving homes</div>
+        <div class="font-details">
+            <span class="vibe">Professional</span>
+            <span class="vibe">Trustworthy</span>
+            <span class="vibe">Approachable</span>
+        </div>
+    </div>
+
+    <!-- Option 5: Quicksand -->
+    <div class="font-option font-5">
+        <div class="font-name">Option 5: Quicksand (Playful)</div>
+        <div class="preview-title">🐾 Welcome to AdoPet TJ</div>
+        <div class="preview-subtitle">Find your perfect companion or help pets find loving homes</div>
+        <div class="font-details">
+            <span class="vibe">Playful</span>
+            <span class="vibe">Friendly</span>
+            <span class="vibe">Rounded</span>
+            <span class="vibe">Pet-friendly</span>
+        </div>
+    </div>
+
+    <!-- Option 6: Nunito -->
+    <div class="font-option font-6">
+        <div class="font-name">Option 6: Nunito (Friendly)</div>
+        <div class="preview-title">🐾 Welcome to AdoPet TJ</div>
+        <div class="preview-subtitle">Find your perfect companion or help pets find loving homes</div>
+        <div class="font-details">
+            <span class="vibe">Friendly</span>
+            <span class="vibe">Soft</span>
+            <span class="vibe">Welcoming</span>
+            <span class="vibe">Warm</span>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem; color: #737373;">
+        <p>💡 <strong>My Recommendation:</strong> Plus Jakarta Sans - Perfect balance of warmth and professionalism for
+            a pet adoption site!</p>
+    </div>
+</body>
+
+</html>

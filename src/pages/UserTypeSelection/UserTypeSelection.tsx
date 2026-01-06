@@ -15,7 +15,7 @@ export function UserTypeSelection() {
                 </div>
 
                 <header className="hero">
-                    <h1>🐾 {t('userType.title')}</h1>
+                    <h1>{t('userType.title')}</h1>
                     <p className="subtitle">{t('userType.subtitle')}</p>
                 </header>
 
