@@ -178,6 +178,14 @@ export function Signup() {
             }
         }
 
+        // Real-time date of birth validation
+        if (field === 'dateOfBirth' && processedValue) {
+            const age = calculateAge(processedValue);
+            if (!isNaN(age) && age < 18) {
+                setErrors(prev => ({ ...prev, dateOfBirth: t('validation.mustBe18') }));
+            }
+        }
+
         // Update password strength
         if (field === 'password') {
             setPasswordStrength(calculatePasswordStrength(processedValue));
