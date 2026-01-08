@@ -177,7 +177,7 @@
 /* Date input special handling */
 .floating-label-input input[type="date"] {
     cursor: pointer;
-    position: relative;
+    color-scheme: light;
 }
 
 /* Always float label for date inputs since they always show a value */
@@ -190,19 +190,9 @@
     pointer-events: none;
 }
 
-/* Make the entire date input clickable for calendar */
+/* Make calendar picker more accessible */
 .floating-label-input input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
-    opacity: 1;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: auto;
-    height: auto;
-    color: transparent;
-    background: transparent;
 }
 
 /* Messages */
