@@ -29,8 +29,10 @@
         "logout": "Log Out"
     },
     "userType": {
-        "title": "🐾 Welcome to AdoPet TJ 🐾",
-        "subtitle": "Every pet deserves a loving home, and every home deserves the joy of a furry friend",
+        "title": "🐾 Join AdoPet TJ 🐾",
+        "subtitle": "Choose how you'd like to make a difference",
+        "haveAccount": "Already have an account?",
+        "loginLink": "Sign in",
         "adopter": {
             "title": "I'm Looking for a Companion",
             "description": "Open your heart and home to a pet in need",

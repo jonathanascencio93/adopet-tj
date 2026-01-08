@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Card, CardBody, Button, LanguageToggle } from '@/components/common';
 import './UserTypeSelection.css';
@@ -94,6 +94,11 @@ export function UserTypeSelection() {
                         </CardBody>
                     </Card>
                 </div>
+
+                <p className="signin-link">
+                    {t('userType.haveAccount')}{' '}
+                    <Link to="/login">{t('userType.loginLink')}</Link>
+                </p>
 
                 <footer className="page-footer">
                     <p>{t('app.name')} • {new Date().getFullYear()}</p>

@@ -29,8 +29,10 @@
         "logout": "Cerrar Sesión"
     },
     "userType": {
-        "title": "🐾 Bienvenido a AdoPet TJ 🐾",
-        "subtitle": "Cada mascota merece un hogar lleno de amor, y cada hogar merece la alegría de un amigo peludo",
+        "title": "🐾 Únete a AdoPet TJ 🐾",
+        "subtitle": "Elige cómo te gustaría marcar la diferencia",
+        "haveAccount": "¿Ya tienes una cuenta?",
+        "loginLink": "Iniciar sesión",
         "adopter": {
             "title": "Busco un Compañero",
             "description": "Abre tu corazón y hogar a una mascota que te necesita",
