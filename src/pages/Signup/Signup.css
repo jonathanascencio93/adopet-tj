@@ -177,10 +177,32 @@
 /* Date input special handling */
 .floating-label-input input[type="date"] {
     cursor: pointer;
+    position: relative;
 }
 
+/* Always float label for date inputs since they always show a value */
+.floating-label-input input[type="date"]+label {
+    top: -10px;
+    left: var(--spacing-2);
+    font-size: var(--text-sm);
+    color: var(--color-primary-600);
+    font-weight: var(--font-semibold);
+    pointer-events: none;
+}
+
+/* Make the entire date input clickable for calendar */
 .floating-label-input input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    color: transparent;
+    background: transparent;
 }
 
 /* Messages */
