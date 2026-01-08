@@ -118,20 +118,85 @@
     }
 }
 
-/* Helper text and error messages */
-.helper-text {
+/* Floating Label Input */
+.floating-label-input {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.floating-label-input input {
+    width: 100%;
+    padding: var(--spacing-4) var(--spacing-3);
+    border: 2px solid var(--color-neutral-300);
+    border-radius: var(--radius-md);
+    font-size: var(--text-base);
+    font-family: var(--font-sans);
+    background-color: white;
+    transition: all var(--transition-fast);
+    outline: none;
+}
+
+.floating-label-input input:focus {
+    border-color: var(--color-primary-500);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.floating-label-input input:focus:invalid {
+    border-color: var(--color-danger-500);
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.floating-label-input label {
+    position: absolute;
+    left: var(--spacing-3);
+    top: var(--spacing-4);
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+    pointer-events: none;
+    transition: all 0.2s ease-out;
+    background-color: white;
+    padding: 0 var(--spacing-1);
+}
+
+/* When input has value or is focused, float the label */
+.floating-label-input input:focus+label,
+.floating-label-input input:not(:placeholder-shown)+label {
+    top: -10px;
+    left: var(--spacing-2);
+    font-size: var(--text-sm);
+    color: var(--color-primary-600);
+    font-weight: var(--font-semibold);
+}
+
+/* Error state */
+.floating-label-input input:focus:invalid+label {
+    color: var(--color-danger-600);
+}
+
+/* Date input special handling */
+.floating-label-input input[type="date"] {
+    cursor: pointer;
+}
+
+.floating-label-input input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
+
+/* Messages */
+.helper-message {
     display: block;
     font-size: var(--text-xs);
     color: var(--color-text-tertiary);
-    margin-top: var(--spacing-1);
+    margin-top: var(--spacing-2);
     padding-left: var(--spacing-1);
 }
 
-.input-error {
+.error-message {
     display: block;
     font-size: var(--text-xs);
     color: var(--color-danger-600);
-    margin-top: var(--spacing-1);
+    margin-top: var(--spacing-2);
     padding-left: var(--spacing-1);
     font-weight: var(--font-medium);
 }

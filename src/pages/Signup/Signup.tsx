@@ -1,7 +1,7 @@
 import { useState, useEffect, type FormEvent } from 'react';
 import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Input, Button, Card, CardBody, LanguageToggle } from '@/components/common';
+import { Button, Card, CardBody, LanguageToggle } from '@/components/common';
 import './Signup.css';
 
 interface FormData {
@@ -246,53 +246,73 @@ export function Signup() {
 
                         <form onSubmit={handleSubmit} className="signup-form">
                             <div className="name-fields">
-                                <Input
-                                    label={t('auth.signup.firstName')}
-                                    type="text"
-                                    value={formData.firstName}
-                                    onChange={(e) => handleChange('firstName', e.target.value)}
-                                    error={errors.firstName}
-                                    required
-                                />
+                                <div className="floating-label-input">
+                                    <input
+                                        type="text"
+                                        id="firstName"
+                                        value={formData.firstName}
+                                        onChange={(e) => handleChange('firstName', e.target.value)}
+                                        placeholder=" "
+                                        required
+                                    />
+                                    <label htmlFor="firstName">{t('auth.signup.firstName')}</label>
+                                    {errors.firstName && <span className="error-message">{errors.firstName}</span>}
+                                </div>
 
-                                <Input
-                                    label={t('auth.signup.lastName')}
-                                    type="text"
-                                    value={formData.lastName}
-                                    onChange={(e) => handleChange('lastName', e.target.value)}
-                                    error={errors.lastName}
-                                    required
-                                />
+                                <div className="floating-label-input">
+                                    <input
+                                        type="text"
+                                        id="lastName"
+                                        value={formData.lastName}
+                                        onChange={(e) => handleChange('lastName', e.target.value)}
+                                        placeholder=" "
+                                        required
+                                    />
+                                    <label htmlFor="lastName">{t('auth.signup.lastName')}</label>
+                                    {errors.lastName && <span className="error-message">{errors.lastName}</span>}
+                                </div>
                             </div>
 
-                            <Input
-                                label={t('auth.signup.dateOfBirth')}
-                                type="date"
-                                value={formData.dateOfBirth}
-                                onChange={(e) => handleChange('dateOfBirth', e.target.value)}
-                                error={errors.dateOfBirth}
-                                required
-                            />
-
-                            <Input
-                                label={t('auth.signup.email')}
-                                type="email"
-                                value={formData.email}
-                                onChange={(e) => handleChange('email', e.target.value)}
-                                error={errors.email}
-                                required
-                            />
-
-                            <div>
-                                <Input
-                                    label={t('auth.signup.password')}
-                                    type="password"
-                                    value={formData.password}
-                                    onChange={(e) => handleChange('password', e.target.value)}
-                                    error={errors.password}
-                                    helperText={!errors.password ? t('auth.signup.passwordRequirements') : undefined}
+                            <div className="floating-label-input">
+                                <input
+                                    type="date"
+                                    id="dateOfBirth"
+                                    value={formData.dateOfBirth}
+                                    onChange={(e) => handleChange('dateOfBirth', e.target.value)}
+                                    placeholder=" "
                                     required
                                 />
+                                <label htmlFor="dateOfBirth">{t('auth.signup.dateOfBirth')}</label>
+                                {errors.dateOfBirth && <span className="error-message">{errors.dateOfBirth}</span>}
+                            </div>
+
+                            <div className="floating-label-input">
+                                <input
+                                    type="email"
+                                    id="email"
+                                    value={formData.email}
+                                    onChange={(e) => handleChange('email', e.target.value)}
+                                    placeholder=" "
+                                    required
+                                />
+                                <label htmlFor="email">{t('auth.signup.email')}</label>
+                                {errors.email && <span className="error-message">{errors.email}</span>}
+                            </div>
+
+                            <div>
+                                <div className="floating-label-input">
+                                    <input
+                                        type="password"
+                                        id="password"
+                                        value={formData.password}
+                                        onChange={(e) => handleChange('password', e.target.value)}
+                                        placeholder=" "
+                                        required
+                                    />
+                                    <label htmlFor="password">{t('auth.signup.password')}</label>
+                                    {!errors.password && <span className="helper-message">{t('auth.signup.passwordRequirements')}</span>}
+                                    {errors.password && <span className="error-message">{errors.password}</span>}
+                                </div>
                                 {formData.password && (
                                     <div className="password-strength">
                                         <div className="password-strength-bar">
@@ -312,14 +332,18 @@ export function Signup() {
                             </div>
 
                             <div>
-                                <Input
-                                    label={t('auth.signup.confirmPassword')}
-                                    type="password"
-                                    value={formData.confirmPassword}
-                                    onChange={(e) => handleChange('confirmPassword', e.target.value)}
-                                    error={errors.confirmPassword}
-                                    required
-                                />
+                                <div className="floating-label-input">
+                                    <input
+                                        type="password"
+                                        id="confirmPassword"
+                                        value={formData.confirmPassword}
+                                        onChange={(e) => handleChange('confirmPassword', e.target.value)}
+                                        placeholder=" "
+                                        required
+                                    />
+                                    <label htmlFor="confirmPassword">{t('auth.signup.confirmPassword')}</label>
+                                    {errors.confirmPassword && <span className="error-message">{errors.confirmPassword}</span>}
+                                </div>
                                 {passwordsMatch !== null && formData.confirmPassword && (
                                     <div className={`password-match-feedback ${passwordsMatch ? 'match' : 'no-match'}`}>
                                         {passwordsMatch ? t('auth.signup.passwordsMatch') : t('auth.signup.passwordsDontMatch')}
