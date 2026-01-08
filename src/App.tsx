@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { UserTypeSelection } from '@/pages/UserTypeSelection';
+import { UserTypeSelection, Signup } from '@/pages';
 import './App.css';
 
 function App() {
@@ -7,8 +7,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<UserTypeSelection />} />
+        <Route path="/signup" element={<Signup />} />
         {/* Future routes */}
-        {/* <Route path="/signup" element={<Signup />} /> */}
         {/* <Route path="/login" element={<Login />} /> */}
         {/* <Route path="/pets" element={<PetListing />} /> */}
       </Routes>

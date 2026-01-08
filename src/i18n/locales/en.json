@@ -29,7 +29,7 @@
         "logout": "Log Out"
     },
     "userType": {
-        "title": "🐾Welcome to AdoPet TJ 🐾",
+        "title": "🐾 Welcome to AdoPet TJ 🐾",
         "subtitle": "Every pet deserves a loving home, and every home deserves the joy of a furry friend",
         "adopter": {
             "title": "I'm Looking for a Companion",
@@ -63,14 +63,34 @@
             "signupLink": "Sign up"
         },
         "signup": {
-            "title": "Create Account",
-            "name": "Full Name",
-            "email": "Email",
+            "title": "Create Your Account",
+            "adopter": {
+                "title": "Join as an Adopter",
+                "subtitle": "Start your journey to find a furry friend"
+            },
+            "rescuer": {
+                "title": "Join as a Rescuer",
+                "subtitle": "Help pets find loving homes"
+            },
+            "firstName": "First Name",
+            "firstNamePlaceholder": "Enter your first name",
+            "lastName": "Last Name",
+            "lastNamePlaceholder": "Enter your last name",
+            "email": "Email Address",
+            "emailPlaceholder": "your@email.com",
             "password": "Password",
+            "passwordPlaceholder": "At least 8 characters",
             "confirmPassword": "Confirm Password",
-            "button": "Sign Up",
+            "confirmPasswordPlaceholder": "Re-enter your password",
+            "button": "Create Account",
             "haveAccount": "Already have an account?",
-            "loginLink": "Log in"
+            "loginLink": "Sign in",
+            "terms": "By creating an account, you agree to our Terms of Service and Privacy Policy",
+            "passwordStrength": {
+                "weak": "Weak",
+                "medium": "Medium",
+                "strong": "Strong"
+            }
         }
     },
     "pets": {

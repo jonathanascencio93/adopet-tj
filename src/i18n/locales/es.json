@@ -29,7 +29,7 @@
         "logout": "Cerrar Sesión"
     },
     "userType": {
-        "title": "🐾Bienvenido a AdoPet TJ 🐾",
+        "title": "🐾 Bienvenido a AdoPet TJ 🐾",
         "subtitle": "Cada mascota merece un hogar lleno de amor, y cada hogar merece la alegría de un amigo peludo",
         "adopter": {
             "title": "Busco un Compañero",
@@ -63,14 +63,34 @@
             "signupLink": "Regístrate"
         },
         "signup": {
-            "title": "Crear Cuenta",
-            "name": "Nombre Completo",
+            "title": "Crear Tu Cuenta",
+            "adopter": {
+                "title": "Únete como Adoptante",
+                "subtitle": "Comienza tu viaje para encontrar un amigo peludo"
+            },
+            "rescuer": {
+                "title": "Únete como Rescatista",
+                "subtitle": "Ayuda a las mascotas a encontrar hogares amorosos"
+            },
+            "firstName": "Nombre",
+            "firstNamePlaceholder": "Ingresa tu nombre",
+            "lastName": "Apellido",
+            "lastNamePlaceholder": "Ingresa tu apellido",
             "email": "Correo Electrónico",
+            "emailPlaceholder": "miCorreo@email.com",
             "password": "Contraseña",
+            "passwordPlaceholder": "Al menos 8 caracteres",
             "confirmPassword": "Confirmar Contraseña",
-            "button": "Registrarse",
+            "confirmPasswordPlaceholder": "Vuelve a ingresar tu contraseña",
+            "button": "Crear Cuenta",
             "haveAccount": "¿Ya tienes una cuenta?",
-            "loginLink": "Iniciar sesión"
+            "loginLink": "Iniciar sesión",
+            "terms": "Al crear una cuenta, aceptas nuestros Términos de Servicio y Política de Privacidad",
+            "passwordStrength": {
+                "weak": "Débil",
+                "medium": "Media",
+                "strong": "Fuerte"
+            }
         }
     },
     "pets": {

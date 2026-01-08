@@ -3,3 +3,4 @@
  */
 
 export * from './UserTypeSelection';
+export * from './Signup';
