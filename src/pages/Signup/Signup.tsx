@@ -247,9 +247,9 @@ export function Signup() {
                             <div className={`user-type-badge ${userType}`}>
                                 {userType === 'adopter' ? t('userType.adopter.title') : t('userType.rescuer.title')}
                             </div>
-                            <p className="signup-subtitle">
+                            {/* <p className="signup-subtitle">
                                 {t(`auth.signup.${userType}.subtitle`)}
-                            </p>
+                            </p> */}
                         </div>
 
                         <form onSubmit={handleSubmit} className="signup-form">
