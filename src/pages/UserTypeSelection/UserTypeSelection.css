@@ -8,7 +8,7 @@
     background-color: var(--color-neutral-50);
 }
 
-.user-type-selection .container {
+.user-type-selection>.container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-4);
