@@ -7,6 +7,7 @@ import './Signup.css';
 interface FormData {
     firstName: string;
     lastName: string;
+    dateOfBirth: string;
     email: string;
     password: string;
     confirmPassword: string;
@@ -15,6 +16,7 @@ interface FormData {
 interface FormErrors {
     firstName?: string;
     lastName?: string;
+    dateOfBirth?: string;
     email?: string;
     password?: string;
     confirmPassword?: string;
@@ -30,6 +32,7 @@ export function Signup() {
     const [formData, setFormData] = useState<FormData>({
         firstName: '',
         lastName: '',
+        dateOfBirth: '',
         email: '',
         password: '',
         confirmPassword: '',
@@ -38,23 +41,37 @@ export function Signup() {
     const [errors, setErrors] = useState<FormErrors>({});
     const [isLoading, setIsLoading] = useState(false);
     const [passwordStrength, setPasswordStrength] = useState<'weak' | 'medium' | 'strong'>('weak');
+    const [passwordsMatch, setPasswordsMatch] = useState<boolean | null>(null);
 
     const validateEmail = (email: string): boolean => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     };
 
+    const calculateAge = (birthDate: string): number => {
+        const today = new Date();
+        const birth = new Date(birthDate);
+        let age = today.getFullYear() - birth.getFullYear();
+        const monthDiff = today.getMonth() - birth.getMonth();
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+            age--;
+        }
+        return age;
+    };
+
     const calculatePasswordStrength = (password: string): 'weak' | 'medium' | 'strong' => {
         if (password.length < 8) return 'weak';
 
-        let strength = 0;
-        if (password.length >= 12) strength++;
-        if (/[a-z]/.test(password) && /[A-Z]/.test(password)) strength++;
-        if (/[0-9]/.test(password)) strength++;
-        if (/[^a-zA-Z0-9]/.test(password)) strength++;
+        const hasLowercase = /[a-z]/.test(password);
+        const hasUppercase = /[A-Z]/.test(password);
+        const hasNumber = /[0-9]/.test(password);
+        const hasSymbol = /[^a-zA-Z0-9]/.test(password);
 
-        if (strength >= 3) return 'strong';
-        if (strength >= 1) return 'medium';
+        const requirementsMet = [hasLowercase, hasUppercase, hasNumber, hasSymbol].filter(Boolean).length;
+
+        if (requirementsMet === 4 && password.length >= 12) return 'strong';
+        if (requirementsMet >= 3 && password.length >= 10) return 'strong';
+        if (requirementsMet >= 2 && password.length >= 8) return 'medium';
         return 'weak';
     };
 
@@ -73,6 +90,17 @@ export function Signup() {
             newErrors.lastName = 'Last name must be at least 2 characters';
         }
 
+        if (!formData.dateOfBirth) {
+            newErrors.dateOfBirth = t('validation.required');
+        } else {
+            const age = calculateAge(formData.dateOfBirth);
+            if (isNaN(age)) {
+                newErrors.dateOfBirth = t('validation.invalidDate');
+            } else if (age < 18) {
+                newErrors.dateOfBirth = t('validation.mustBe18');
+            }
+        }
+
         if (!formData.email.trim()) {
             newErrors.email = t('validation.required');
         } else if (!validateEmail(formData.email)) {
@@ -83,6 +111,15 @@ export function Signup() {
             newErrors.password = t('validation.required');
         } else if (formData.password.length < 8) {
             newErrors.password = t('validation.passwordTooShort');
+        } else {
+            const hasLowercase = /[a-z]/.test(formData.password);
+            const hasUppercase = /[A-Z]/.test(formData.password);
+            const hasNumber = /[0-9]/.test(formData.password);
+            const hasSymbol = /[^a-zA-Z0-9]/.test(formData.password);
+
+            if (!hasLowercase || !hasUppercase || !hasNumber || !hasSymbol) {
+                newErrors.password = t('validation.passwordRequirements');
+            }
         }
 
         if (!formData.confirmPassword) {
@@ -106,6 +143,20 @@ export function Signup() {
         // Update password strength
         if (field === 'password') {
             setPasswordStrength(calculatePasswordStrength(value));
+
+            // Check if passwords match when password changes
+            if (formData.confirmPassword) {
+                setPasswordsMatch(value === formData.confirmPassword);
+            }
+        }
+
+        // Check password match when confirm password changes
+        if (field === 'confirmPassword') {
+            if (value && formData.password) {
+                setPasswordsMatch(value === formData.password);
+            } else {
+                setPasswordsMatch(null);
+            }
         }
     };
 
@@ -163,7 +214,6 @@ export function Signup() {
                                 <Input
                                     label={t('auth.signup.firstName')}
                                     type="text"
-                                    placeholder={t('auth.signup.firstNamePlaceholder')}
                                     value={formData.firstName}
                                     onChange={(e) => handleChange('firstName', e.target.value)}
                                     error={errors.firstName}
@@ -173,7 +223,6 @@ export function Signup() {
                                 <Input
                                     label={t('auth.signup.lastName')}
                                     type="text"
-                                    placeholder={t('auth.signup.lastNamePlaceholder')}
                                     value={formData.lastName}
                                     onChange={(e) => handleChange('lastName', e.target.value)}
                                     error={errors.lastName}
@@ -182,9 +231,17 @@ export function Signup() {
                             </div>
 
                             <Input
+                                label={t('auth.signup.dateOfBirth')}
+                                type="date"
+                                value={formData.dateOfBirth}
+                                onChange={(e) => handleChange('dateOfBirth', e.target.value)}
+                                error={errors.dateOfBirth}
+                                required
+                            />
+
+                            <Input
                                 label={t('auth.signup.email')}
                                 type="email"
-                                placeholder={t('auth.signup.emailPlaceholder')}
                                 value={formData.email}
                                 onChange={(e) => handleChange('email', e.target.value)}
                                 error={errors.email}
@@ -195,10 +252,10 @@ export function Signup() {
                                 <Input
                                     label={t('auth.signup.password')}
                                     type="password"
-                                    placeholder={t('auth.signup.passwordPlaceholder')}
                                     value={formData.password}
                                     onChange={(e) => handleChange('password', e.target.value)}
                                     error={errors.password}
+                                    helperText={!errors.password ? t('auth.signup.passwordRequirements') : undefined}
                                     required
                                 />
                                 {formData.password && (
@@ -219,15 +276,21 @@ export function Signup() {
                                 )}
                             </div>
 
-                            <Input
-                                label={t('auth.signup.confirmPassword')}
-                                type="password"
-                                placeholder={t('auth.signup.confirmPasswordPlaceholder')}
-                                value={formData.confirmPassword}
-                                onChange={(e) => handleChange('confirmPassword', e.target.value)}
-                                error={errors.confirmPassword}
-                                required
-                            />
+                            <div>
+                                <Input
+                                    label={t('auth.signup.confirmPassword')}
+                                    type="password"
+                                    value={formData.confirmPassword}
+                                    onChange={(e) => handleChange('confirmPassword', e.target.value)}
+                                    error={errors.confirmPassword}
+                                    required
+                                />
+                                {passwordsMatch !== null && formData.confirmPassword && (
+                                    <div className={`password-match-feedback ${passwordsMatch ? 'match' : 'no-match'}`}>
+                                        {passwordsMatch ? t('auth.signup.passwordsMatch') : t('auth.signup.passwordsDontMatch')}
+                                    </div>
+                                )}
+                            </div>
 
                             <Button
                                 type="submit"

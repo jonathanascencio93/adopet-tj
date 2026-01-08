@@ -171,6 +171,28 @@
     color: var(--color-success-600);
 }
 
+/* Password Match Feedback */
+.password-match-feedback {
+    margin-top: var(--spacing-2);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    padding: var(--spacing-2) var(--spacing-3);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.password-match-feedback.match {
+    color: var(--color-success-700);
+    background-color: var(--color-success-50);
+    border: 1px solid var(--color-success-200);
+}
+
+.password-match-feedback.no-match {
+    color: var(--color-danger-700);
+    background-color: var(--color-danger-50);
+    border: 1px solid var(--color-danger-200);
+}
+
 /* Terms & Sign In Link */
 .terms-text {
     font-size: var(--text-xs);

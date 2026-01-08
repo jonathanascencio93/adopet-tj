@@ -73,15 +73,14 @@
                 "subtitle": "Ayuda a las mascotas a encontrar hogares amorosos"
             },
             "firstName": "Nombre",
-            "firstNamePlaceholder": "Ingresa tu nombre",
             "lastName": "Apellido",
-            "lastNamePlaceholder": "Ingresa tu apellido",
+            "dateOfBirth": "Fecha de Nacimiento",
             "email": "Correo Electrónico",
-            "emailPlaceholder": "miCorreo@email.com",
             "password": "Contraseña",
-            "passwordPlaceholder": "Al menos 8 caracteres",
+            "passwordRequirements": "Debe incluir: minúscula, mayúscula, número y símbolo",
             "confirmPassword": "Confirmar Contraseña",
-            "confirmPasswordPlaceholder": "Vuelve a ingresar tu contraseña",
+            "passwordsMatch": "¡Las contraseñas coinciden! ✓",
+            "passwordsDontMatch": "Las contraseñas no coinciden",
             "button": "Crear Cuenta",
             "haveAccount": "¿Ya tienes una cuenta?",
             "loginLink": "Iniciar sesión",
@@ -108,6 +107,9 @@
         "required": "Este campo es obligatorio",
         "emailInvalid": "Por favor ingresa un correo electrónico válido",
         "passwordTooShort": "La contraseña debe tener al menos 8 caracteres",
-        "passwordsDoNotMatch": "Las contraseñas no coinciden"
+        "passwordRequirements": "La contraseña debe incluir minúscula, mayúscula, número y símbolo",
+        "passwordsDoNotMatch": "Las contraseñas no coinciden",
+        "mustBe18": "Debes tener al menos 18 años",
+        "invalidDate": "Por favor ingresa una fecha válida"
     }
 }
