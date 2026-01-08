@@ -133,6 +133,7 @@
     font-size: var(--text-base);
     font-family: var(--font-sans);
     background-color: white;
+    color: var(--color-text-primary);
     transition: all var(--transition-fast);
     outline: none;
 }
