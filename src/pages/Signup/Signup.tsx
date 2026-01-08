@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { useState, useEffect, type FormEvent } from 'react';
 import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Input, Button, Card, CardBody, LanguageToggle } from '@/components/common';
@@ -42,6 +42,7 @@ export function Signup() {
     const [isLoading, setIsLoading] = useState(false);
     const [passwordStrength, setPasswordStrength] = useState<'weak' | 'medium' | 'strong'>('weak');
     const [passwordsMatch, setPasswordsMatch] = useState<boolean | null>(null);
+    const [isFormValid, setIsFormValid] = useState(false);
 
     const validateEmail = (email: string): boolean => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -132,28 +133,65 @@ export function Signup() {
         return Object.keys(newErrors).length === 0;
     };
 
+    const checkFormValidity = () => {
+        const isValid =
+            formData.firstName.trim().length >= 2 &&
+            formData.lastName.trim().length >= 2 &&
+            formData.dateOfBirth !== '' &&
+            calculateAge(formData.dateOfBirth) >= 18 &&
+            validateEmail(formData.email) &&
+            formData.password.length >= 8 &&
+            /[a-z]/.test(formData.password) &&
+            /[A-Z]/.test(formData.password) &&
+            /[0-9]/.test(formData.password) &&
+            /[^a-zA-Z0-9]/.test(formData.password) &&
+            formData.password === formData.confirmPassword;
+
+        setIsFormValid(isValid);
+    };
+
+    // Check form validity whenever formData changes
+    useEffect(() => {
+        checkFormValidity();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [formData]);
+
     const handleChange = (field: keyof FormData, value: string) => {
-        setFormData(prev => ({ ...prev, [field]: value }));
+        let processedValue = value;
+
+        // Only allow alphabetical characters for name fields
+        if (field === 'firstName' || field === 'lastName') {
+            processedValue = value.replace(/[^a-zA-Z\u00c0-\u00ff\s'-]/g, '');
+        }
+
+        setFormData(prev => ({ ...prev, [field]: processedValue }));
 
         // Clear error for this field
         if (errors[field]) {
             setErrors(prev => ({ ...prev, [field]: undefined }));
         }
 
+        // Real-time email validation
+        if (field === 'email' && processedValue.length > 0) {
+            if (!validateEmail(processedValue)) {
+                setErrors(prev => ({ ...prev, email: t('validation.emailInvalid') }));
+            }
+        }
+
         // Update password strength
         if (field === 'password') {
-            setPasswordStrength(calculatePasswordStrength(value));
+            setPasswordStrength(calculatePasswordStrength(processedValue));
 
             // Check if passwords match when password changes
             if (formData.confirmPassword) {
-                setPasswordsMatch(value === formData.confirmPassword);
+                setPasswordsMatch(processedValue === formData.confirmPassword);
             }
         }
 
         // Check password match when confirm password changes
         if (field === 'confirmPassword') {
-            if (value && formData.password) {
-                setPasswordsMatch(value === formData.password);
+            if (processedValue && formData.password) {
+                setPasswordsMatch(processedValue === formData.password);
             } else {
                 setPasswordsMatch(null);
             }
@@ -201,9 +239,6 @@ export function Signup() {
                             <div className={`user-type-badge ${userType}`}>
                                 {userType === 'adopter' ? t('userType.adopter.title') : t('userType.rescuer.title')}
                             </div>
-                            <h1 className="signup-title">
-                                {t(`auth.signup.${userType}.title`)}
-                            </h1>
                             <p className="signup-subtitle">
                                 {t(`auth.signup.${userType}.subtitle`)}
                             </p>
@@ -297,6 +332,7 @@ export function Signup() {
                                 variant="primary"
                                 size="lg"
                                 isLoading={isLoading}
+                                disabled={!isFormValid || isLoading}
                                 style={{ width: '100%', marginTop: 'var(--spacing-4)' }}
                             >
                                 {t('auth.signup.button')}

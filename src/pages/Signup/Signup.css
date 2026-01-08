@@ -67,15 +67,21 @@
     }
 }
 
+.signup-title {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-3);
+}
+
 .user-type-badge {
     display: inline-block;
-    padding: var(--spacing-2) var(--spacing-4);
+    padding: var(--spacing-3) var(--spacing-5);
     border-radius: var(--radius-full);
-    font-size: var(--text-sm);
+    font-size: var(--text-base);
     font-weight: var(--font-semibold);
-    margin-bottom: var(--spacing-4);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-5);
+    letter-spacing: 0.02em;
 }
 
 .user-type-badge.adopter {
@@ -86,13 +92,6 @@
 .user-type-badge.rescuer {
     background: linear-gradient(135deg, var(--color-secondary-100), var(--color-secondary-200));
     color: var(--color-secondary-700);
-}
-
-.signup-title {
-    font-size: var(--text-3xl);
-    font-weight: var(--font-bold);
-    color: var(--color-text-primary);
-    margin-bottom: var(--spacing-3);
 }
 
 .signup-subtitle {
@@ -119,9 +118,27 @@
     }
 }
 
+/* Helper text and error messages */
+.helper-text {
+    display: block;
+    font-size: var(--text-xs);
+    color: var(--color-text-tertiary);
+    margin-top: var(--spacing-1);
+    padding-left: var(--spacing-1);
+}
+
+.input-error {
+    display: block;
+    font-size: var(--text-xs);
+    color: var(--color-danger-600);
+    margin-top: var(--spacing-1);
+    padding-left: var(--spacing-1);
+    font-weight: var(--font-medium);
+}
+
 /* Password Strength Indicator */
 .password-strength {
-    margin-top: var(--spacing-2);
+    margin-top: var(--spacing-3);
     display: flex;
     align-items: center;
     gap: var(--spacing-3);
