@@ -41,6 +41,23 @@
 .signup-card {
     box-shadow: var(--shadow-2xl);
     border: 1px solid rgba(255, 255, 255, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add colored top border based on user type */
+.signup-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--color-primary-600);
+}
+
+.signup-page[data-user-type="rescuer"] .signup-card::before {
+    background: var(--color-secondary-600);
 }
 
 .signup-header {
@@ -76,22 +93,24 @@
 
 .user-type-badge {
     display: inline-block;
-    padding: var(--spacing-3) var(--spacing-5);
+    padding: var(--spacing-4) var(--spacing-6);
     border-radius: var(--radius-full);
-    font-size: var(--text-base);
-    font-weight: var(--font-semibold);
-    margin-bottom: var(--spacing-5);
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--spacing-2);
     letter-spacing: 0.02em;
 }
 
 .user-type-badge.adopter {
     background: linear-gradient(135deg, var(--color-primary-100), var(--color-primary-200));
     color: var(--color-primary-700);
+    box-shadow: 0 2px 8px rgba(14, 165, 233, 0.15);
 }
 
 .user-type-badge.rescuer {
-    background: linear-gradient(135deg, var(--color-secondary-100), var(--color-secondary-200));
-    color: var(--color-secondary-700);
+    background: linear-gradient(135deg, #fef3c7, #fed7aa);
+    color: #b45309;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.15);
 }
 
 .signup-subtitle {
@@ -143,6 +162,12 @@
     box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
 }
 
+/* Rescuer theme for focused inputs */
+.signup-page[data-user-type="rescuer"] .floating-label-input input:focus {
+    border-color: var(--color-secondary-500);
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
 .floating-label-input input:focus:invalid {
     border-color: var(--color-danger-500);
     box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
@@ -177,6 +202,12 @@
     font-size: var(--text-sm);
     color: var(--color-primary-600);
     font-weight: var(--font-semibold);
+}
+
+/* Rescuer theme for labels */
+.signup-page[data-user-type="rescuer"] .floating-label-input input:focus+label,
+.signup-page[data-user-type="rescuer"] .floating-label-input input:not(:placeholder-shown)+label {
+    color: var(--color-secondary-600);
 }
 
 /* Error state */

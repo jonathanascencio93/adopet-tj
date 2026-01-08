@@ -232,7 +232,7 @@ export function Signup() {
     };
 
     return (
-        <div className="signup-page">
+        <div className="signup-page" data-user-type={userType}>
             <div className="signup-container">
                 <div className="language-toggle-wrapper">
                     <LanguageToggle />
